@@ -26,6 +26,7 @@ The design of this application was created using Figma. You can view the design 
 ## Expected Features
 
 ### Customer Features
+
 - **Customer Registration**: Customers can register for a new account.
 - **Customer Login**: Customers can log in to their accounts.
 - **View Products**: Customers can view the list of available products(Menu).
@@ -33,6 +34,7 @@ The design of this application was created using Figma. You can view the design 
 - **View Order History**: Customers can view their past orders.
 
 ### Admin Features
+
 - **Admin Registration**: Admins can register an account as employees.
 - **Admin Login**: Admins can log in to manage the coffee shop and its employees.
 - **Manage Customers**: Employees can view and update customer details.
@@ -43,11 +45,13 @@ The design of this application was created using Figma. You can view the design 
 ## Technologies Used
 
 ### Base
+
 - **HTML**
 - **Bootstrap CSS**
 - **JavaScript**
 
 ### Other technologies and Libraries Used
+
 - **Bootstrap Icons**
 - **Animate On Scroll**
 - **Typed JS**
@@ -57,6 +61,7 @@ The design of this application was created using Figma. You can view the design 
 
 The project is divided into two main sections: `admin` and `customer`, each with its own separate website.
 
+```
 CoffeeShopManagementFrontend/
 ├── admin/
 │   ├── assets/
@@ -92,7 +97,7 @@ CoffeeShopManagementFrontend/
         ├── Products.html
         ├── Register.html
         └── User.html
-
+```
 
 ## Getting Started
 
@@ -104,10 +109,11 @@ CoffeeShopManagementFrontend/
 ### Installation
 
 1. **Clone the Repository**
+
    ```
    git clone https://github.com/yourusername/CoffeeShopManagementFrontend.git
    cd CoffeeShopManagementFrontend
-    ```
+   ```
 
 2. **Open the Project**
 
@@ -118,6 +124,7 @@ Open the `index.html` files in your browser to view the application.
 Update the API endpoint URLs in the JavaScript files to match the backend API URLs.
 
 ### Running the Application
+
 To run the application locally, you can use a local server like http-server or Live Server in VS Code.
 
 1. **Using http-server**

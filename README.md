@@ -18,8 +18,6 @@ The Coffee Shop Management System is a web-based frontend application designed t
   - [Installation](#installation)
   - [Configuration](#configuration)
   - [Running the Application](#running-the-application)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Design Files
 

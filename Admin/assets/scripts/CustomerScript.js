@@ -12,10 +12,12 @@ const tokenArray = token.split('.');
 const tokenPayload = JSON.parse(atob(tokenArray[1]));
 adminRole = tokenPayload["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
 
+// HTML page event listener
 document.addEventListener('DOMContentLoaded', function(){
     getAllDetails();
 });
 
+// Display toast
 function newToast(classBackground, message){
     const toastNotification = new bootstrap.Toast(document.getElementById('toastNotification'));
     var toast = document.getElementById('toastNotification');
@@ -28,6 +30,7 @@ function newToast(classBackground, message){
     toastNotification.show();
 }
 
+// Fetch and display all customer details
 function getAllDetails() {
     fetch('http://localhost:5228/api/customer/getAll',{
         method: 'GET',
@@ -103,6 +106,7 @@ function getAllDetails() {
     })
 }
 
+// Search for customer details
 function searchResults(customerEmail){
     fetch('http://localhost:5228/api/customer/getAll',{
         method: 'GET',
@@ -131,6 +135,7 @@ function searchResults(customerEmail){
     })
 }
 
+// Fetch and update the customer points
 function updatePoints(customerEmail, newPoints){
     fetch("http://localhost:5228/api/customer/updateLoyaltyPoints",{
         method: "PUT",
@@ -153,6 +158,7 @@ function updatePoints(customerEmail, newPoints){
     return 200;
 }
 
+// Add data table to the table
 function addDataTable(){
     const table = $("#table-custom").DataTable({
         columns: [null, null, null, null, null],

@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Fetch and display all the products
 function getAllProducts(){
     fetch('http://localhost:5228/api/product/getAllProducts', {
         method: 'GET',
@@ -44,6 +45,7 @@ function getAllProducts(){
     });
 }
 
+// Append a row of product details
 function addRow(element){
     const row = document.createElement('tr');
     let statusColor = '';
@@ -67,6 +69,7 @@ function addRow(element){
     return row;
 }
 
+// Custom search function
 function searchResults(productName){
     fetch('http://localhost:5228/api/product/getAllProducts',{
         method: 'GET',
@@ -105,6 +108,7 @@ function searchResults(productName){
     })
 }
 
+// Add DataTable to the table
 function addDataTable() {
     const table = $("#table-custom").DataTable({
         columns: [null, null, null, null, null, null, null],

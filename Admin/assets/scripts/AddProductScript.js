@@ -8,6 +8,7 @@ var imageInput = document.getElementById("image");
 
 var token = sessionStorage.getItem("employeeToken");
 
+// HTML page event listener
 document.addEventListener("DOMContentLoaded", function () {
   statusInput.addEventListener("change", function () {
     if (statusInput.value === "Available") {
@@ -19,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Add new product
 function newProduct() {
   const form = document.getElementById("newProductForm");
 
@@ -74,6 +76,7 @@ function newProduct() {
   });
 }
 
+// Display Toast
 function newToast(classBackground, message) {
   const toastNotification = new bootstrap.Toast(
     document.getElementById("toastNotification")
@@ -88,6 +91,7 @@ function newToast(classBackground, message) {
   toastNotification.show();
 }
 
+// Cloudinary image upload widget configuration
 var imageUploaded = "";
 const myWidget = cloudinary.createUploadWidget(
   {
@@ -112,11 +116,10 @@ const myWidget = cloudinary.createUploadWidget(
     }
   }
 );
-document.getElementById("upload_widget").addEventListener(
-  "click",
-  function (e) {
+
+// Image Upload Widget Listener
+document.getElementById("upload_widget").addEventListener("click", function (e) {
     e.preventDefault();
     myWidget.open();
-  },
-  false
+  },false
 );

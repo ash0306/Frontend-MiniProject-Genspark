@@ -27,6 +27,7 @@ const tokenArray = token.split('.');
 const tokenPayload = JSON.parse(atob(tokenArray[1]));
 const tokenId = tokenPayload["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"];
 
+// Display toast
 function newToast(classBackground, message) {
     const toastNotification = new bootstrap.Toast(document.getElementById('toastNotification'));
     var toast = document.getElementById('toastNotification');
@@ -39,6 +40,7 @@ function newToast(classBackground, message) {
     toastNotification.show();
 }
 
+// Display the user profile details
 function displayUserDetails() {
     fetch('http://localhost:5228/api/customer/getById?id=' + tokenId, {
         method: 'GET',
@@ -77,6 +79,7 @@ function displayUserDetails() {
     });
 }
 
+// Edit user phone number UI handling
 function editPhone(email, currentPhone) {
     var editIcon = document.getElementById('edit-phone');
     var saveBtn = document.getElementById('save-changes');
@@ -104,6 +107,7 @@ function editPhone(email, currentPhone) {
     });
 }
 
+// Fetch and update the phone
 function updatePhone(email) {
     var phoneInput = document.getElementById('phone-input');
     var newPhone = phoneInput.value;
@@ -145,6 +149,7 @@ function updatePhone(email) {
     });
 }
 
+// Validate phone number input
 function validatePhoneNumber(phone) {
     const phoneRegex = /^[0-9]{10}$/;
     return phoneRegex.test(phone);

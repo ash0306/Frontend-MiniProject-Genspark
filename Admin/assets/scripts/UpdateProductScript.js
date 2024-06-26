@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// Moderate the product update functionality
 function updateProduct(){
     const form = document.getElementById("productForm");
 
@@ -54,6 +55,7 @@ function updateProduct(){
     });
 }
 
+// Function to update the stock
 function updateStock(name, stock) {
     return fetch('http://localhost:5228/api/product/updateStock', {
         method: 'PUT',
@@ -82,6 +84,7 @@ function updateStock(name, stock) {
     });
 }
 
+// Funtion to update the status 
 function updateStatus(name, status, stock) {
     return fetch('http://localhost:5228/api/product/updateStatus', {
         method: 'PUT',
@@ -111,6 +114,7 @@ function updateStatus(name, status, stock) {
     });
 }
 
+// Funtion to update the price
 function updatePrice(name, price) {
     return fetch('http://localhost:5228/api/product/updatePrice', {
         method: 'PUT',

@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     displayOrders();
 });
 
+// Display all the pending orders to be made
 function displayOrders() {
     fetch("http://localhost:5228/api/orders/pendingOrders", {
         method: 'GET',
@@ -106,6 +107,7 @@ function displayOrders() {
     });
 }
 
+// Update the order status to the next one
 function updateOrderStatus(orderId, orderStatus) {
     fetch("http://localhost:5228/api/orders/updateOrderStatus", {
         method: 'PUT',
@@ -129,6 +131,7 @@ function updateOrderStatus(orderId, orderStatus) {
     });
 }
 
+// Display toast
 function newToast(classBackground, message){
     const toastNotification = new bootstrap.Toast(document.getElementById('toastNotification'));
     var toast = document.getElementById('toastNotification');

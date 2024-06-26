@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+// Get details of all products
 function getProducts(){
     fetch('http://localhost:5228/api/product/menu', {
         method: 'GET',
@@ -92,6 +93,7 @@ function getProducts(){
     });
 }
 
+// Create a product card
 function createCard(item) {
     const productCard = document.createElement('div');
     productCard.className = 'card col-md-3 col-sm-5 shadow-lg p-0';
@@ -109,6 +111,7 @@ function createCard(item) {
     return productCard;
 }
 
+// Add product to cart functionality
 function addToCart(name, price) {
         let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
         
@@ -122,6 +125,7 @@ function addToCart(name, price) {
         newToast("bg-success", "Item added successfully!");
 }
 
+// Display toast
 function newToast(classBackground, message) {
     const toastNotification = new bootstrap.Toast(document.getElementById('toastNotification'));
     var toast = document.getElementById('toastNotification');

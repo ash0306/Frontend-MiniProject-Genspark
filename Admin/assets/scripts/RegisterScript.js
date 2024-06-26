@@ -7,6 +7,7 @@ const dob = document.getElementById("dob").value;
 const phone = document.getElementById("phone").value;
 var role = '';
 
+// Check validity of User input DOB
 function isValidAge() {
     const dobInput = document.getElementById('dob');
     const dobValue = dobInput.value;
@@ -41,6 +42,7 @@ document.getElementById('dob').addEventListener('input', function () {
     isValidAge();
 });
 
+// Display toast
 function newToast(classBackground, message){
     const toastNotification = new bootstrap.Toast(document.getElementById('toastNotification'));
     var toast = document.getElementById('toastNotification');
@@ -52,6 +54,7 @@ function newToast(classBackground, message){
     }
     toastNotification.show();
 }
+
 
 document.addEventListener("DOMContentLoaded", function (){
     const form = document.querySelector("form.needs-validation");
@@ -86,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function (){
     });
 })
 
+// Register a new employee
 function register(fetchUrl){
     fetch(`${fetchUrl}`,{
         method: "POST",
@@ -115,6 +119,7 @@ function register(fetchUrl){
     });
 }
 
+// Toggle the password view
 document.getElementById("toggle-password").addEventListener("click",function(){
     var passwordInput = document.getElementById('password');
         var icon = this.querySelector('i');

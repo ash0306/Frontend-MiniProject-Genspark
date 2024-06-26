@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     login();
 });
 
+// Function to login user
 function login() {
     const form = document.querySelector("form.needs-validation");
 
@@ -45,6 +46,7 @@ function login() {
     });
 }
 
+// Display toast
 function newToast(classBackground, message) {
   const toastNotification = new bootstrap.Toast(
     document.getElementById("toastNotification")
@@ -59,9 +61,8 @@ function newToast(classBackground, message) {
   toastNotification.show();
 }
 
-document
-  .getElementById("toggle-password")
-  .addEventListener("click", function () {
+// Toggle the password view
+document.getElementById("toggle-password").addEventListener("click", function () {
     var passwordInput = document.getElementById("password");
     var icon = this.querySelector("i");
     if (passwordInput.type === "password") {

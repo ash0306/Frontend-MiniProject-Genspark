@@ -11,6 +11,7 @@ const tokenPayload = JSON.parse(atob(tokenArray[1]));
 const tokenId = tokenPayload["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"];
 var total = 0;
 
+// Fetch the user loyalty points
 async function getUserLoyaltyPoints() {
     const response = await fetch("http://localhost:5228/api/customer/getById?id="+tokenId,{
         method: 'GET',
@@ -24,6 +25,8 @@ async function getUserLoyaltyPoints() {
 }
 
 const switchCheck = document.getElementById('switchCheck');
+
+// Event listener for loyalty points toggle
 switchCheck.addEventListener('click',function(){
     if(switchCheck.checked){
         const cartDiscountContainer = document.getElementById('cart-discount');
@@ -75,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
     placeOrder(tokenId, token);
 });
 
+// Add a new order
 function placeOrder(tokenId, token){
     const form = document.getElementById('orderForm');
     const cart = JSON.parse(sessionStorage.getItem('cart'));
@@ -122,6 +126,7 @@ function placeOrder(tokenId, token){
     });
 }
 
+// Remove an item from the cart
 function removeItem(itemName) {
     let cart = JSON.parse(sessionStorage.getItem('cart'));
     let itemPrice = 0;

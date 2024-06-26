@@ -18,6 +18,7 @@ const tokenArray = token.split('.');
 const tokenPayload = JSON.parse(atob(tokenArray[1]));
 const tokenId = tokenPayload["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"];
 
+// DIsplay all the orders of the user
 function displayOrders() {
     fetch('http://localhost:5228/api/orders/getOrderByCustomerId?customerId='+tokenId, {
         method: 'GET',
@@ -66,6 +67,7 @@ function displayOrders() {
     })
 }
 
+// Customize the placed order to add new order details
 function newPlacedOrder(element, orderList) {
     var orderBody = `
         <h2 class="accordion-header">
@@ -92,6 +94,7 @@ function newPlacedOrder(element, orderList) {
     return orderBody;
 }
 
+// Add new order details
 function newOrder(element, orderList){
     var orderBody = `
         <h2 class="accordion-header">
@@ -117,6 +120,7 @@ function newOrder(element, orderList){
     return orderBody;
 }
 
+// Display toast
 function newToast(classBackground, message){
     const toastNotification = new bootstrap.Toast(document.getElementById('toastNotification'));
     var toast = document.getElementById('toastNotification');
@@ -129,6 +133,7 @@ function newToast(classBackground, message){
     toastNotification.show();
 }
 
+// Cancel the order
 function cancelOrder(orderId) {
     fetch('http://localhost:5228/api/orders/cancelOrder?orderId='+orderId, {
         method: 'POST',

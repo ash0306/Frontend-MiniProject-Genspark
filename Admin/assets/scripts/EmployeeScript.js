@@ -14,6 +14,7 @@ adminRole =
 const adminDetailsDiv = document.getElementById("div-container");
 const employeeDetailsDiv = document.getElementById("div-content");
 
+// HTML page event listeners
 document.addEventListener("DOMContentLoaded", function () {
   if (adminRole == "Admin") {
     getAllAdminDetails();
@@ -22,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// Display toast
 function newToast(classBackground, message) {
   const toastNotification = new bootstrap.Toast(
     document.getElementById("toastNotification")
@@ -36,6 +38,7 @@ function newToast(classBackground, message) {
   toastNotification.show();
 }
 
+// Display the details if user is admin
 function getAllAdminDetails() {
   var typed = new Typed("#typed-element1", {
     strings: ["Employee Details"],
@@ -108,6 +111,7 @@ function getAllAdminDetails() {
     });
 }
 
+// Module to add data to table
 function addRow(element) {
   const row = document.createElement("tr");
 
@@ -155,6 +159,7 @@ function addRow(element) {
   return row;
 }
 
+// Display the details if user is Manager or Barista 
 function getEmployeeDetails() {
   var typed = new Typed("#typed-element2", {
     strings: ["Employee Details"],
@@ -209,6 +214,7 @@ function getEmployeeDetails() {
     });
 }
 
+// Deactivate the employee
 function deactivateEmployee(employeeId) {
   if (employeeId === tokenId) {
     newToast("bg-danger", "Cannot update your own status");
@@ -238,6 +244,7 @@ function deactivateEmployee(employeeId) {
   });
 }
 
+// Activate the employee
 function activateEmployee(employeeId) {
   if (employeeId === tokenId) {
     newToast("bg-danger", "Cannot update your own status");
@@ -267,6 +274,7 @@ function activateEmployee(employeeId) {
   });
 }
 
+// Update the employee salary
 function updateSalary(employeeId, newSalary) {
   fetch("http://localhost:5228/api/employee/updateSalary", {
     method: "PUT",
@@ -289,6 +297,7 @@ function updateSalary(employeeId, newSalary) {
   return 200;
 }
 
+// Add data table to the table
 function addDataTable() {
   const table = $("#table-custom").DataTable({
     columns: [null, null, null, null, null, null, null, null],

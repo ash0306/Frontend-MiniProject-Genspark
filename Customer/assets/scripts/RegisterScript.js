@@ -1,5 +1,6 @@
 AOS.init({ duration: 1500 });
 
+// Check the validity of user input of DOB
 function isValidAge() {
     const dobInput = document.getElementById('dob');
     const dobValue = dobInput.value;
@@ -31,6 +32,7 @@ document.getElementById('dob').addEventListener('input', function () {
     isValidAge();
 });
 
+// Register new user
 document.addEventListener("DOMContentLoaded", function (){
     const form = document.querySelector("form.needs-validation");
 
@@ -76,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function (){
     });
 })
 
+// Display toast
 function newToast(classBackground, message){
     const toastNotification = new bootstrap.Toast(document.getElementById('toastNotification'));
     var toast = document.getElementById('toastNotification');
@@ -88,6 +91,7 @@ function newToast(classBackground, message){
     toastNotification.show();
 }
 
+// Toggle password visibility
 document.getElementById("toggle-password").addEventListener("click",function(){
     var passwordInput = document.getElementById('password');
         var icon = this.querySelector('i');
